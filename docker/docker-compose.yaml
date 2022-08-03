@@ -1,0 +1,24 @@
+version: '3.4'
+
+# docker-compose run local bash
+
+services:
+  local: 
+    build: ./ #Uncomment this to rebuild
+    #image:  pythonfiles_model
+    image: speech_separation:latest
+    ports:
+      - 8888:8888
+    #Let code run
+    stdin_open: true
+    tty: true
+    volumes:
+      - ../:/speech_separation
+      # - /mnt/d/datasets/mms/mms/mms_batch_1/:/preproc/datasets/mms/mms/mms_batch_1
+      # - /mnt/d/datasets/mms/mms/mms_batch_2/:/preproc/datasets/mms/mms/mms_batch_2
+      - /mnt/d/datasets/mms/:/speech_separation/datasets/mms
+      - /mnt/d/datasets/example_libri/:/speech_separation/datasets/example_libri
+    ulimits:
+      memlock: -1 # set upper limit for how much memory is locked for the container (-1 means lock as much as the container uses)
+    shm_size: 32gb # set upper limit for how much shared memory container can use
+    # command: ['/bin/bash']

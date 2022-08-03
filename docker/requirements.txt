@@ -1,0 +1,13 @@
+# To ensure app dependencies are ported from your virtual environment/host machine into your container, run 'pip freeze > requirements.txt' in the terminal to overwrite this file
+librosa==0.8.1
+audiosegment==0.23.0
+pydub==0.25.1
+numpy==1.21.0
+scikit-learn==1.0.2
+clearml==1.2.1
+tqdm
+noisereduce
+pandas
+audiomentations
+torch-audiomentations
+speechbrain
