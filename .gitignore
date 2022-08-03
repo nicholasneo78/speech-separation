@@ -1,3 +1,5 @@
 datasets/*
 annotations/*
 *.ipynb_checkpoints
+pretrained_models/*
+*.wav
